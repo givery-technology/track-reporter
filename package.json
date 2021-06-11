@@ -1,0 +1,14 @@
+{
+  "name": "track-reporter",
+  "version": "0.0.1",
+  "description": "Mocha Reporter for Track",
+  "author": "givery <developers@givery.co.jp>",
+  "main": "track-reporter.js",
+  "repository": "git://github.com/givery-technology/track-reporter.git",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@givery-technology"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.0"
+  }
+}
