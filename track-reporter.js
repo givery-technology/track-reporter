@@ -18,9 +18,6 @@ class TrackReporter {
     let n = 1;
 
     runner
-      .once(EVENT_RUN_BEGIN, () => {
-        console.log('start');
-      })
       .on(EVENT_SUITE_BEGIN, () => {
         this.increaseIndent();
       })
@@ -39,8 +36,9 @@ class TrackReporter {
         );
       })
       .once(EVENT_RUN_END, () => {
-        console.log(`end: ${stats.passes}/${stats.passes + stats.failures} ok`);
-
+        console.log(`# tests ${stats.passes + stats.failures}`)
+        console.log(`# pass ${stats.passes}`)
+        console.log(`# fail ${stats.failures}`)
       });
   }
 
