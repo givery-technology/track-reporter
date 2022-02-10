@@ -14,16 +14,13 @@ class TrackReporter {
     let n = 1;
 
     runner
-      .on(EVENT_SUITE_END, () => {
-        n++;
-      })
       .on(EVENT_TEST_PASS, (test) => {
         // Test#fullTitle() returns the suite name(s)
         // prepended to the test title
-        console.log(`ok ${n} ${test.fullTitle()}`);
+        console.log(`ok ${n++} ${test.fullTitle().trim()}`);
       })
       .on(EVENT_TEST_FAIL, (test, err) => {
-        console.log(`not ok ${n} ${test.fullTitle()}`);
+        console.log(`not ok ${n++} ${test.fullTitle().trim()}`);
         err.message.split("\n").forEach(line => console.log("  " + line));
       })
       .once(EVENT_RUN_END, () => {
